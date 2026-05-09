@@ -11,6 +11,22 @@ if ! command -v stow &> /dev/null; then
 
 fi
 
+echo "This script will overwrite existing config files in your home directory."
+read -p "Are you sure you want to proceed? (yes/no): " CONFIRM
+
+if [[ "$CONFIRM" != "yes" ]]; then
+    echo "Setup aborted."
+    exit 1
+fi
+
+echo "It will also undo any uncommited changes in this repository."
+read -p "Are you sure you want to proceed? (yes/no): " CONFIRM
+
+if [[ "$CONFIRM" != "yes" ]]; then
+    echo "Setup aborted."
+    exit 1
+fi
+
 
 echo "Linking configurations to $HOME..."
 
@@ -23,11 +39,13 @@ if [ -d "$DOTS_DIR" ]; then
         if [ -d "$folder" ]; then
             echo "Deploying: $folder"
             # -R: (updates existing links)
-            # -f: (overwrites default system files)
+            # --adop: move files from original location to repo
             # -t: Target 
-            stow -R -f -t "$HOME" "$folder"
+            stow -v -R --adopt --dotfiles --no-folding -t "$HOME" "$folder"
         fi
     done
+    # Remove the moved files, link to original repo files
+    git checkout .
 else
     echo "Could not find 'dots' folder at $DOTS_DIR"
     exit 1
