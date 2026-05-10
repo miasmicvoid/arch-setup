@@ -40,7 +40,7 @@ if [ -d "$DOTS_DIR" ]; then
             	# -R: (updates existing links)
             	# --adop: move files from original location to repo
             	# -t: Target 
-		stow -v --adopt --dotfiles -t "$HOME" "$folder"
+		stow -v --dotfiles --target="$HOME" --adopt "$folder"
 		git checkout .		
 	done
     # Remove the moved files, link to original repo files
