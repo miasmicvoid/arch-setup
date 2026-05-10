@@ -41,7 +41,9 @@ if [ -d "$DOTS_DIR" ]; then
             # -R: (updates existing links)
             # --adop: move files from original location to repo
             # -t: Target 
-            stow -v -R --adopt --dotfiles --no-folding -t "$HOME" "$folder"
+	    for file in "$folder"/*; do
+		    rm -rf "$HOME"
+            stow -v -R --adopt --dotfiles -t "$HOME" "$folder"
         else
 	    stow -v -R --adopt --dotfiles -t "$HOME" "$folder"
 	fi
