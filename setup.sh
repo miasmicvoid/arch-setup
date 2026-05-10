@@ -32,27 +32,21 @@ echo "Linking configurations to $HOME..."
 
 if [ -d "$DOTS_DIR" ]; then
     # Move into the dots directory so Stow sees the 'packages'
-    cd "$DOTS_DIR"
+	cd "$DOTS_DIR"
 
     # Loop through every folder in dots/
-    for folder in *; do
-        if [[ -d "$folder" && "$folder" != "theme" ]]; then
-            echo "Deploying: $folder"
-            # -R: (updates existing links)
-            # --adop: move files from original location to repo
-            # -t: Target 
-	    for file in "$folder"/*; do
-		    rm -rf "$HOME"
-            stow -v -R --adopt --dotfiles -t "$HOME" "$folder"
-        else
-	    stow -v -R --adopt --dotfiles -t "$HOME" "$folder"
-	fi
-    git checkout .		
-    done
+	for folder in *; do
+        	echo "Deploying: $folder"
+            	# -R: (updates existing links)
+            	# --adop: move files from original location to repo
+            	# -t: Target 
+		stow -v -R --adopt --dotfiles -t "$HOME" "$folder"
+		git checkout .		
+	done
     # Remove the moved files, link to original repo files
 else
-    echo "Could not find 'dots' folder at $DOTS_DIR"
+    echo "Could not find 'desktopenvironment' folder at $DOTS_DIR"
     exit 1
-fi
+	fi
 
 echo "Finished."
