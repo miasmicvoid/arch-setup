@@ -1,4 +1,4 @@
-sudo pacman -Sy --needed git base-devel less
+sudo pacman -Sy --needed git base-devel less rustup
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
