@@ -27,7 +27,7 @@ exec swayidle -w \
 
 # ===================== MONITORS ==================================
 # enter `swaymsg -t get_outputs` to get your monitor details.
-output eDP-1 pos 0 0 res 1920x1080@60.049Hz
+output * pos 0 0 res 1920x1080@60.049Hz
 # =================================================================
 
 # ===================== WALLPAPER =================================
