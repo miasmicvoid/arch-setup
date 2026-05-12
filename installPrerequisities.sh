@@ -1,4 +1,4 @@
-sudo pacman -Sy --needed git base-devel
+sudo pacman -Sy --needed git base-devel less
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
