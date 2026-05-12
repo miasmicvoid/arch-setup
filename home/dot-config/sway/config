@@ -27,8 +27,8 @@ exec swayidle -w \
 
 # ===================== MONITORS ==================================
 # enter `swaymsg -t get_outputs` to get your monitor details.
-output DP-1 pos 0 0 res 1920x1080@60.000Hz
-output HDMI-A-1 pos 1920 0 res 1920x1080@60.000Hz
+output 'Dell Inc. DELL P2419H 23RZFZ2' pos 0 0 res 1920x1080@60.000Hz
+output 'Dell Inc. DELL P2417H CW6Y76811K8B' pos 1920 0 res 1920x1080@60.000Hz
 # =================================================================
 
 # ===================== WALLPAPER =================================
