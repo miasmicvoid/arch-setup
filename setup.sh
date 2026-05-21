@@ -48,8 +48,11 @@ ln -sfn "$DOTFILES_DIR/dot-themes" "$TARGET_DIR/.themes"
 echo
 echo "Done linking dotfiles"
 
+atuin history import
+
 echo "Enabling ly on 1 session"
 sudo systemctl enable ly@tty1.service
 sudo systemctl disable getty@tty1.service
 echo "Done with script, system ready to use, please reboot"
+
 
