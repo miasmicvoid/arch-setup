@@ -1,0 +1,3 @@
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
