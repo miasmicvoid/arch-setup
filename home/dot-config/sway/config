@@ -31,7 +31,7 @@ output * pos 0 0 res 1920x1080@60.049Hz
 # =================================================================
 
 # ===================== WALLPAPER =================================
-output * bg "/home/miasmicvoid/Pictures/wallpapers/colorshift.png" fill
+output * bg "~/Pictures/wallpapers/colorshift.png" fill
 # =================================================================
 
 # ===================== WINDOWS ============================
