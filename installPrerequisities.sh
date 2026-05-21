@@ -4,3 +4,4 @@ cd yay
 makepkg -si
 
 yay -S --needed sway swaybg swaylock swayidle swaync swayosd eww wofi waybar nautilus kitty spotify-player grim swappy ly atuin
+yay -S --needed zsh-theme-powerlevel10k-git
